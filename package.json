@@ -17,6 +17,7 @@
   "dependencies": {
     "@fontsource/inconsolata": "^4.5.0",
     "@fontsource/montserrat": "^4.5.1",
+    "@heroicons/react": "^1.0.4",
     "gatsby": "^3.13.1",
     "install": "^0.13.0",
     "npm": "^8.0.0",

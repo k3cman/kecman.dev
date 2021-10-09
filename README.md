@@ -7,7 +7,8 @@ Roadmap:
 - [x] Add icons
 - [ ] Make Skeleton UI with Tailwind
     - [x] Make navigation
-    - [ ] Make contact component
+    - [x] Make contact component
+    - [x] adjust fixed position for placehilder component
     - [ ] Make welcome herro
     - [ ] Make blog section
     - [ ] Make projects section

@@ -54,3 +54,18 @@ body{
 .page-wrapper{
     min-height:calc(100vh - 40px);
 }
+
+.vertical-line{
+    content: '';
+    width:1px;
+    height:100px;
+    background:black;
+}
+
+
+.vertical-line-long{
+    content: '';
+    width:1px;
+    height:150px;
+    background:black;
+}

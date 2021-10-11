@@ -2,11 +2,13 @@ import * as React from 'react';
 
 const HeroSection = () => {
     return (
-        <div className="min-h-screen pt-36 pl-10 w-full relative">
-            <h1 className="font-sans font-black text-5xl z-50">Nemanja Kecman</h1>
-            <h2 className="text-3xl font-bold font-sans text-gray-600">I build things for the web</h2>
-            <div className="absolute bg-gray-900 hero-background"></div>
+        <div className="flex hero">
+            <div className="flex flex-col justify-center">
+                        <h1 className="font-mono text-7xl font-bold">Hi, my <br /> name is <span className="font-black text-green-500">Kecman</span>.</h1>
+                        <h2 className="text-5xl font-bold font-mono text-gray-600"> {'>'} I build things for the web_</h2>
+                    </div>
         </div>
+        
     )
 }
 

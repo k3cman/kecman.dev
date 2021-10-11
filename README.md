@@ -9,7 +9,7 @@ Roadmap:
     - [x] Make navigation
     - [x] Make contact component
     - [x] adjust fixed position for placehilder component
-    - [ ] Make welcome herro
+    - [x] Make welcome herro
     - [ ] Make blog section
     - [ ] Make projects section
     - [ ] Make about section

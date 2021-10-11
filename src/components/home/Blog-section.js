@@ -27,7 +27,7 @@ const BlogSection = () => {
             <div className="mt-20 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
                 {mockupBlogs.map(post => {
                     return (
-                        <div className="flex flex-col justify-between overflow-hidden p-5 border-green-500 border cursor-pinter">
+                        <div className="flex flex-col justify-between overflow-hidden p-5 border-gray-500 border cursor-pointer hover:border-green-500 hover:shadow-lg">
                             <div className="h-10 w-full flex justify-between align-center mt-2">
                                 <DocumentTextIcon className="stroke-current stroke-1 w-5 h-5">
                                 </DocumentTextIcon>

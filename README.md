@@ -33,3 +33,14 @@ Roadmap:
 - [ ] Write 5 posts
 - [ ] Write static site content
 - [ ] Deploy
+
+## Before dedision on bloging platforms
+
+Write 3 of the following posts:
+
+- [ ] Base setup of angular app
+- [ ] Base setup of react app
+- [ ] Base setup of vue app
+- [ ] Recreate material table
+- [ ] Ngrx and query parameters
+- [ ] Credit card form Angular

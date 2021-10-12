@@ -14,9 +14,12 @@ Roadmap:
   - [x] Make blog section
   - [x] Make projects section
   - [-] Make about section
-  - [ ] Make Blog pages
-  - [ ] Make Projects page
-  - [ ] Make About page
+  - [x] Make Blog pages
+    - [ ] Add mock content and update styles
+  - [x] Make Projects page
+    - [ ] Add mock content and update styles
+  - [x] Make About page
+    - [ ] Add mock content and update styles
   - [ ] Make single Blog Page
   - [ ] Send projects to a github/project page instead of opening links
 - [ ] Adjust skeleton to my design needs

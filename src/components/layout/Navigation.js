@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 const mockPages = [
   {
     name: "Home",
-    link: "#",
+    link: "/",
   },
   {
     name: "Blog",
@@ -13,11 +13,11 @@ const mockPages = [
   },
   {
     name: "Projects",
-    link: "#",
+    link: "/projects",
   },
   {
     name: "About",
-    link: "#",
+    link: "/about",
   },
 ];
 

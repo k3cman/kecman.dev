@@ -1,26 +1,51 @@
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
-    title: "kecman.dev",
+    title: "Kecman.dev",
   },
   plugins: [
-    `gatsby-plugin-postcss`,
+    "gatsby-plugin-postcss",
+    "gatsby-plugin-image",
+    // {
+    //   resolve: "gatsby-plugin-google-analytics",
+    //   options: {
+    //     trackingId: "12345",
+    //   },
+    // },
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-plugin-manifest",
       options: {
-        name: `posts`,
-        path: `${__dirname}/src/posts/`,
+        icon: "src/images/icon.png",
       },
     },
+    "gatsby-plugin-mdx",
     {
-      resolve: `gatsby-plugin-mdx`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        defaultLayouts: {
-          default: require.resolve(
-            "./src/components/templates/post-template.js"
-          ),
-        },
+        name: "posts",
+        path: "./src/posts/",
       },
+      __key: "posts",
+    },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/images/",
+      },
+      __key: "images",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: "./src/pages/",
+      },
+      __key: "pages",
     },
   ],
 };

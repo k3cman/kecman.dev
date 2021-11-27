@@ -13,7 +13,7 @@ const mockPages = [
   },
   {
     name: "Blog",
-    link: "/blogs",
+    link: "/blog",
   },
   {
     name: "Projects",
@@ -33,7 +33,7 @@ const Navigation = () => {
         <span className="text-green-400">.dev</span>{" "}
       </Link>
       <nav>
-        <ul class="flex">
+        <ul className="flex">
           {mockPages.map((link, index) => (
             <li
               className="mr-3 font-mono font-medium hover:text-green-400"

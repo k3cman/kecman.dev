@@ -69,9 +69,12 @@ const BlogSection = () => {
         subtitle="My latest posts about technology, developement and design"
       />
       <div className="mt-20 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-        {mockupBlogs.map((post) => {
+        {mockupBlogs.map((post, index) => {
           return (
-            <div className="flex flex-col justify-between overflow-hidden p-5 border-gray-500 border cursor-pointer hover:border-green-500 hover:shadow-lg">
+            <div
+              key={index}
+              className="flex flex-col justify-between overflow-hidden p-5 border-gray-500 border cursor-pointer hover:border-green-500 hover:shadow-lg"
+            >
               <div className="h-10 w-full flex justify-between align-center mt-2">
                 <DocumentTextIcon className="stroke-current stroke-1 w-5 h-5"></DocumentTextIcon>
                 <ExternalLinkIcon className="stroke-current stroke-1 w-5 h-5"></ExternalLinkIcon>
@@ -85,9 +88,12 @@ const BlogSection = () => {
                 </p>
               </div>
               <ul className="flex align-center mt-2 flex-wrap h-10">
-                {post.tags.map((tag) => {
+                {post.tags.map((tag, index) => {
                   return (
-                    <li className="mt-2 mx-1 text-xs text-gray-400 self-end rounded-md bg-gray-300 px-2 cursor-pointer">
+                    <li
+                      key={index}
+                      className="mt-2 mx-1 text-xs text-gray-400 self-end rounded-md bg-gray-300 px-2 cursor-pointer"
+                    >
                       #{tag}
                     </li>
                   );

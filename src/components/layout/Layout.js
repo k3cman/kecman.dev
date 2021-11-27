@@ -7,7 +7,7 @@ const Layot = (props) => {
     <div className="page-wrapper bg-gray-100 p-5">
       <ContactPlaceholder />
       <Navigation />
-      <div className="max-w-7xl mx-auto">{props.children}</div>
+      <div className="max-w-5xl mx-auto">{props.children}</div>
     </div>
   );
 };

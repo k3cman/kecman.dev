@@ -39,8 +39,8 @@ const ProjectSection = () => {
                 {title}
               </h3>
               <p className="font-sans text-sm">{description}</p>
-              {tags.map((tag) => {
-                return <small>{tag}</small>;
+              {tags.map((tag, index) => {
+                return <small key={index}>{tag}</small>;
               })}
             </div>
           );

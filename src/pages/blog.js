@@ -1,25 +1,21 @@
 import * as React from "react";
 import Layot from "../components/layout/Layout";
 import Footer from "../components/layout/Footer";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 
 const BlogsPage = ({ data }) => {
-  const allBlogs = data.allMdx.edges.map((edge) => {
-    const node = edge.node.frontmatter;
-    return {
-      title: node.title,
-      date: node.date,
-    };
-  });
+  const { edges: posts } = data.allMdx;
 
-  console.log(allBlogs);
   return (
     <Layot>
       <main>
         <ul>
-          {allBlogs.map((blog, index) => (
-            <li key={index}>
-              {blog.title} - {blog.date}
+          {posts.map(({ node: post }) => (
+            <li key={post.id}>
+              <Link to={post.slug}>
+                <h2>{post.frontmatter.title}</h2>
+              </Link>
+              <p>{post.excerpt}</p>
             </li>
           ))}
         </ul>
@@ -29,15 +25,17 @@ const BlogsPage = ({ data }) => {
   );
 };
 
-export const query = graphql`
-  query BlogsPageQuery {
+export const pageQuery = graphql`
+  query blogIndex {
     allMdx {
       edges {
         node {
+          id
+          excerpt
           frontmatter {
             title
-            date
           }
+          slug
         }
       }
     }

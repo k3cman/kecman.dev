@@ -8,6 +8,10 @@ const mockPages = [
     link: "/",
   },
   {
+    name: "Shorts",
+    link: "/shorts",
+  },
+  {
     name: "Blog",
     link: "/blogs",
   },

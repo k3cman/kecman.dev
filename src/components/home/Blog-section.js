@@ -1,6 +1,7 @@
 import * as React from "react";
 import SectionTitle from "../shared/SectionTitle";
 import { DocumentTextIcon, ExternalLinkIcon } from "@heroicons/react/outline";
+import { graphql, useStaticQuery } from "gatsby";
 
 const mockupBlogs = [
   {
@@ -62,6 +63,32 @@ const mockupBlogs = [
 ];
 
 const BlogSection = () => {
+  const queryData = useStaticQuery(graphql`
+    query blogHome {
+      allMdx(limit: 6, sort: { fields: frontmatter___date, order: DESC }) {
+        edges {
+          node {
+            excerpt
+            slug
+            frontmatter {
+              title
+              date
+            }
+          }
+        }
+      }
+    }
+  `);
+  const data = queryData.allMdx.edges.map((edge) => {
+    const { excerpt, slug, frontmatter } = edge.node;
+    const { date, title } = frontmatter;
+    return {
+      title,
+      date,
+      excerpt,
+      slug,
+    };
+  });
   return (
     <div className="w-full">
       <SectionTitle
@@ -69,7 +96,7 @@ const BlogSection = () => {
         subtitle="My latest posts about technology, developement and design"
       />
       <div className="mt-20 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-        {mockupBlogs.map((post, index) => {
+        {data.map((post, index) => {
           return (
             <div
               key={index}
@@ -84,10 +111,13 @@ const BlogSection = () => {
                   {post.title}
                 </h3>
                 <p className="text-gray-500 text-sm font-sans h-20">
-                  {post.short}
+                  {post.excerpt}
+                </p>
+                <p>
+                  <em>{post.date}</em>
                 </p>
               </div>
-              <ul className="flex align-center mt-2 flex-wrap h-10">
+              {/* <ul className="flex align-center mt-2 flex-wrap h-10">
                 {post.tags.map((tag, index) => {
                   return (
                     <li
@@ -98,7 +128,7 @@ const BlogSection = () => {
                     </li>
                   );
                 })}
-              </ul>
+              </ul> */}
             </div>
           );
         })}

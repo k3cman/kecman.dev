@@ -28,7 +28,9 @@ Roadmap:
   - [ ] Investigate Hero section
   - [ ] Update projects section (hide untill relased projects)
   - [ ] Add animations
-  - [ ] React Helmet
+  - [x] React Helmet
+    - [ ] Add seo component to every page
+    - [x] Add to every blog page
   - [ ] Decide on Blog section layout
   - [ ] Decide on blog page layout
 - [ ] Decide on writing on blog platform and posting on blog <=> posting here -> blog platforms

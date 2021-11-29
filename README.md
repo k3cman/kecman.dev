@@ -28,6 +28,9 @@ Roadmap:
   - [ ] Investigate Hero section
   - [ ] Update projects section (hide untill relased projects)
   - [ ] Add animations
+  - [ ] React Helmet
+  - [ ] Decide on Blog section layout
+  - [ ] Decide on blog page layout
 - [ ] Decide on writing on blog platform and posting on blog <=> posting here -> blog platforms
 - [ ] Add needed system plugins after decision (hashnode, makrdown or similar)
 - [ ] Write 5 posts

@@ -15,12 +15,12 @@ Roadmap:
   - [x] Make projects section
   - [-] Make about section
   - [x] Make Blog pages
-    - [ ] Add mock content and update styles
+    - [x] Add mock content and update styles
   - [x] Make Projects page
     - [ ] Add mock content and update styles
   - [x] Make About page
     - [ ] Add mock content and update styles
-  - [ ] Make single Blog Page
+  - [x] Make single Blog Page
   - [ ] Send projects to a github/project page instead of opening links
 - [ ] Adjust skeleton to my design needs
   - [ ] Purge layout
@@ -31,8 +31,8 @@ Roadmap:
   - [x] React Helmet
     - [ ] Add seo component to every page
     - [x] Add to every blog page
-  - [ ] Decide on Blog section layout
-  - [ ] Decide on blog page layout
+  - [x] Decide on Blog section layout
+  - [x] Decide on blog page layout
 - [ ] Decide on writing on blog platform and posting on blog <=> posting here -> blog platforms
 - [ ] Add needed system plugins after decision (hashnode, makrdown or similar)
 - [ ] Write 5 posts
@@ -49,3 +49,4 @@ Write 3 of the following posts:
 - [ ] Recreate material table
 - [ ] Ngrx and query parameters
 - [ ] Credit card form Angular
+- [ ] Change deteciton

@@ -17,16 +17,16 @@ Roadmap:
   - [x] Make Blog pages
     - [x] Add mock content and update styles
   - [x] Make Projects page
-    - [ ] Add mock content and update styles
+    - [x] Add mock content and update styles
   - [x] Make About page
     - [ ] Add mock content and update styles
   - [x] Make single Blog Page
-  - [ ] Send projects to a github/project page instead of opening links
+  - [?] Send projects to a github/project page instead of opening links
 - [ ] Adjust skeleton to my design needs
   - [ ] Purge layout
   - [ ] Update social networks
   - [ ] Investigate Hero section
-  - [ ] Update projects section (hide untill relased projects)
+  - [x] Update projects section (hide untill relased projects)
   - [ ] Add animations
   - [x] React Helmet
     - [ ] Add seo component to every page
@@ -38,6 +38,9 @@ Roadmap:
 - [ ] Write 5 posts
 - [ ] Write static site content
 - [ ] Deploy
+- [ ] Write about page
+- [ ] Wrote 3 short posts
+- [ ] Developer tools
 
 ## Before dedision on bloging platforms
 

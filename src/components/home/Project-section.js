@@ -1,4 +1,7 @@
+import { graphql, Link, useStaticQuery } from "gatsby";
 import * as React from "react";
+import ButtonComponent from "../shared/Button";
+import ButtonOutlinedComponent from "../shared/ButtonOutlined";
 import SectionTitle from "../shared/SectionTitle";
 
 const mockProjects = [
@@ -23,33 +26,60 @@ const mockProjects = [
 ];
 
 const ProjectSection = () => {
+  const queryData = useStaticQuery(graphql`
+    query projectHome {
+      allMdx(limit: 6, filter: { frontmatter: { type: { eq: "project" } } }) {
+        edges {
+          node {
+            excerpt
+            slug
+            frontmatter {
+              title
+              date
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const projects = queryData.allMdx.edges.map((edge) => {
+    const { excerpt, slug, frontmatter } = edge.node;
+    const { date, title } = frontmatter;
+    return {
+      title,
+      date,
+      slug,
+      excerpt,
+    };
+  });
+
   return (
     <div className="w-full mt-20">
       <SectionTitle title="Latest projects"></SectionTitle>
       <div className="flex flex-col pt-5">
-        {mockProjects.map((project, index) => {
-          const { title, description, tags } = project;
+        {projects.map((project, index) => {
+          const { title, excerpt } = project;
 
           return (
             <div
               key={index}
-              className="w-2/3 self-start border-l-4 border-green-500 pl-5 mb-5 py-5 cursor-pointer"
+              className="rounded-md transition-all duration-500 self-start border-l-4 hover:border-green-500 px-5 mb-5 py-5 cursor-pointer bg-gray-200"
             >
               <h3 className="text-3xl font-mono pt-2 text-green-500">
                 {title}
               </h3>
-              <p className="font-sans text-sm">{description}</p>
-              {tags.map((tag, index) => {
-                return <small key={index}>{tag}</small>;
-              })}
+              <p className="font-sans text-sm pb-10">{excerpt}</p>
+              <ButtonOutlinedComponent
+                label="View"
+                link={"project/" + project.slug}
+              ></ButtonOutlinedComponent>
             </div>
           );
         })}
       </div>
       <div className="w-full flex items-center justify-center mt-5">
-        <button className="font-mono py-2 px-5 border border-green-500 hover:bg-gray-200">
-          {">"} View All_
-        </button>
+        <ButtonComponent label="View All" link="projects"></ButtonComponent>
       </div>
     </div>
   );

@@ -34,6 +34,14 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
+        name: "shorts",
+        path: "./content/shorts/",
+      },
+      __key: "shorts",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
         name: "projects",
         path: "./content/projects/",
       },

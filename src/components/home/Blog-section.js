@@ -44,11 +44,8 @@ const BlogSection = () => {
       <div className="mt-20 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
         {data.map((post, index) => {
           return (
-            <Link to={"blog/" + post.slug}>
-              <div
-                key={index}
-                className="flex flex-col justify-between overflow-hidden bg-gray-200 p-5 rounded-md border-transparent border-l-4 cursor-pointer hover:border-green-500 hover:border-l-4  transition-all duration-500"
-              >
+            <Link key={index} to={"blog/" + post.slug}>
+              <div className="flex flex-col justify-between overflow-hidden bg-gray-200 p-5 rounded-md border-transparent border-l-4 cursor-pointer hover:border-green-500 hover:border-l-4  transition-all duration-500">
                 <div className="h-10 w-full flex justify-between align-center">
                   <DocumentTextIcon className="stroke-current stroke-1 w-5 h-5"></DocumentTextIcon>
                   <ExternalLinkIcon className="stroke-current stroke-1 w-5 h-5"></ExternalLinkIcon>

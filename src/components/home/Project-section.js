@@ -1,4 +1,4 @@
-import { graphql, Link, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react";
 import ButtonComponent from "../shared/Button";
 import ButtonOutlinedComponent from "../shared/ButtonOutlined";

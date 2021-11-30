@@ -56,7 +56,7 @@ const ProjectSection = () => {
 
   return (
     <div className="w-full mt-20">
-      <SectionTitle title="Latest projects"></SectionTitle>
+      <SectionTitle title="Featured projects"></SectionTitle>
       <div className="flex flex-col pt-5">
         {projects.map((project, index) => {
           const { title, excerpt } = project;

@@ -2,65 +2,7 @@ import * as React from "react";
 import SectionTitle from "../shared/SectionTitle";
 import { DocumentTextIcon, ExternalLinkIcon } from "@heroicons/react/outline";
 import { graphql, useStaticQuery } from "gatsby";
-
-const mockupBlogs = [
-  {
-    title: "Rectreating Angular Material Table",
-    short:
-      "Exploring Angular directives, RxJS and styling while recreating Angular Material table",
-    tags: [
-      "angular",
-      "material",
-      "rxjs",
-      "typescript",
-      "scss",
-      "angular",
-      "material",
-      "rxjs",
-      "typescript",
-      "scss",
-    ],
-  },
-  {
-    title: "Creating React Table component from scratch",
-    short: "Exploring React ways of creating table components...",
-    tags: ["reactjs", "typescript", "hooks"],
-  },
-  {
-    title: "NgRx and Query parameters",
-    short:
-      "Simple way of implementing filtering of data with url query parameters and ngrx",
-    tags: ["angular", "ngrx", "rxjs"],
-  },
-  {
-    title: "Rectreating Angular Material Table",
-    short:
-      "Exploring Angular directives, RxJS and styling while recreating Angular Material table",
-    tags: [
-      "angular",
-      "material",
-      "rxjs",
-      "typescript",
-      "scss",
-      "angular",
-      "material",
-      "rxjs",
-      "typescript",
-      "scss",
-    ],
-  },
-  {
-    title: "Creating React Table component from scratch",
-    short: "Exploring React ways of creating table components...",
-    tags: ["reactjs", "typescript", "hooks"],
-  },
-  {
-    title: "NgRx and Query parameters",
-    short:
-      "Simple way of implementing filtering of data with url query parameters and ngrx",
-    tags: ["angular", "ngrx", "rxjs"],
-  },
-];
+import ButtonComponent from "../shared/Button";
 
 const BlogSection = () => {
   const queryData = useStaticQuery(graphql`
@@ -100,14 +42,14 @@ const BlogSection = () => {
           return (
             <div
               key={index}
-              className="flex flex-col justify-between overflow-hidden p-5 border-gray-500 border cursor-pointer hover:border-green-500 hover:shadow-lg"
+              className="flex flex-col justify-between overflow-hidden bg-gray-200 p-5 rounded-md border-transparent border-l-4 cursor-pointer hover:border-green-500 hover:border-l-4  transition-all duration-500"
             >
-              <div className="h-10 w-full flex justify-between align-center mt-2">
+              <div className="h-10 w-full flex justify-between align-center">
                 <DocumentTextIcon className="stroke-current stroke-1 w-5 h-5"></DocumentTextIcon>
                 <ExternalLinkIcon className="stroke-current stroke-1 w-5 h-5"></ExternalLinkIcon>
               </div>
               <div>
-                <h3 className="text-green-500 text-2xl font-mono h-20">
+                <h3 className="text-green-500 text-2xl font-mono">
                   {post.title}
                 </h3>
                 <p className="text-gray-500 text-sm font-sans h-20">
@@ -134,9 +76,7 @@ const BlogSection = () => {
         })}
       </div>
       <div className="w-full flex items-center justify-center mt-5">
-        <button className="font-mono py-2 px-5 border border-green-500 hover:bg-gray-200">
-          {">"} View All_
-        </button>
+        <ButtonComponent label={"View all"} />
       </div>
     </div>
   );

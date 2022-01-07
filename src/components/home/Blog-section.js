@@ -16,6 +16,9 @@ const BlogSection = () => {
           node {
             excerpt
             slug
+            wordCount{
+              words
+            }
             frontmatter {
               title
               date
@@ -26,15 +29,19 @@ const BlogSection = () => {
     }
   `);
   const data = queryData.allMdx.edges.map((edge) => {
-    const { excerpt, slug, frontmatter } = edge.node;
+    const { excerpt, slug, frontmatter, wordCount: {words} } = edge.node;
     const { date, title } = frontmatter;
+    /** Divide words in article with average words per minute */
+    const timeToRead = Math.ceil(words / 255);
     return {
       title,
       date,
       excerpt,
       slug,
+      timeToRead
     };
   });
+  console.log(data);
   return (
     <div className="w-full">
       <SectionTitle
@@ -51,15 +58,13 @@ const BlogSection = () => {
                   <ExternalLinkIcon className="stroke-current stroke-1 w-5 h-5"></ExternalLinkIcon>
                 </div>
                 <div>
-                  <h3 className="text-green-500 text-2xl font-mono">
+                  <h3 className="text-green-500 text-3xl font-mono mb-1">
                     {post.title}
                   </h3>
-                  <p className="text-gray-500 text-sm font-sans h-20">
+                  <p className="text-gray-500 text-base font-sans mb-2">
                     {post.excerpt}
                   </p>
-                  <p>
-                    <em>{post.date}</em>
-                  </p>
+                  <small>{post.timeToRead} minutes read</small>
                 </div>
               </div>
             </Link>
